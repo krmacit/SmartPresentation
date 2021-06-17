@@ -1,0 +1,109 @@
+.HomePage {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  padding: 5px;
+
+  .HomeTitle {
+    text-align: center;
+    text-decoration: underline;
+    background-color: #4C5464;
+    color: #EBF2E8;
+    text-decoration-color: #EBF2E8;
+    align-self: center;
+    font-size: 1.5rem;
+  }
+
+  .HomeSession {
+    display: grid;
+    padding: 10px;
+    background-color: #FCF4EF;
+    color: #4C5464;
+    align-self: center;
+    grid-template-columns: 1fr 2fr;
+
+    .HomeSessionBody {
+      display: grid;
+      padding: 6px;
+      background-color: #FC7061;
+      align-self: center;
+      grid-template-rows: 1fr 1fr;
+
+      .HomeSessionBodyUpload {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px;
+      }
+
+      .HomeSessionBodyImport {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px;
+      }
+    }
+  }
+
+  .HomeSlides {
+    display: grid;
+    padding: 10px;
+    background-color: #FCF4EF;
+    color: #4C5464;
+    align-self: center;
+    grid-template-columns: 1fr 2fr;
+
+    .HomeSlidesBody {
+      display: grid;
+      padding: 6px;
+      background-color: #FC7061;
+      align-self: center;
+      grid-template-rows: 1fr 1fr;
+
+      .HomeSlidesBodyUpload {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px;
+      }
+
+      .HomeSlidesBodyGenerate {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px;
+      }
+    }
+  }
+
+  .HomePresentation {
+    display: grid;
+    padding: 10px;
+    background-color: #FCF4EF;
+    color: #4C5464;
+    align-self: center;
+    grid-template-columns: 1fr 2fr;
+
+    .HomePresentationBody {
+      align-self: center;
+      padding: 6px;
+      background-color: #FC7061;
+    }
+  }
+
+  .HomeNavigator {
+    display: grid;
+    padding: 10px;
+    background-color: #FCF4EF;
+    color: #4C5464;
+    align-self: center;
+    grid-template-columns: 1fr 2fr;
+
+    .HomeNavigatorBody {
+      display: grid;
+      padding: 6px;
+      background-color: #FC7061;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-self: center;
+    }
+  }
+}

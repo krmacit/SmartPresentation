@@ -1,0 +1,29 @@
+.Navigator {
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    padding: 5px;
+
+    .NavigatorTitle {    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5px;
+        text-decoration: underline;
+        background-color: #FCF4EF;
+        color: #4C5464;
+        .HomeButton {
+          align-self: center;
+          text-align: right;
+        }
+    }
+
+    iframe{
+        height: 96%;
+        width: 100%;
+        background-color: white;
+    }
+
+    .NavigatorButtons {
+        align-self: center;
+        align-items: center;
+    }
+}

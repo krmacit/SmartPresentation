@@ -1,0 +1,28 @@
+.PresentationGenerator {
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr;
+    padding: 5px;
+
+    .PresentationGeneratorTitle {    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5px;
+        text-decoration: underline;
+        background-color: #FCF4EF;
+        color: #4C5464;
+        .HomeButton {
+          align-self: center;
+          text-align: right;
+        }
+    }
+
+    .PresentationGeneratorHead {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .PresentationGeneratorBody {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
