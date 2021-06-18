@@ -1,25 +1,31 @@
 import { React, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SlidePreview } from '../components/SlidePreview';
 import "./Navigator.scss"
 
 
 export const Navigator = ({ presentationName }) => {
     const [presentations, setPresentations] = useState([]);
     const [page, setPage] = useState(0);
+    const [toc, setToc] = useState(false)
 
     useEffect(
         () => {
-            console.log(localStorage.getItem(presentationName))
-            setPresentations(JSON.parse(localStorage.getItem(presentationName)))
-            console.log(presentations)
-            setPage(0)
+            if (toc === false) {
+                console.log(localStorage.getItem(presentationName))
+                setPresentations(JSON.parse(localStorage.getItem(presentationName)))
+                console.log(presentations)
+                setPage(0)
+            }
         }, []
     );
 
     useEffect(
         () => {
-            setIframe(page)
-        }, [presentations, page]
+            if (toc === false) {
+                setIframe(page)
+            }
+        }, [presentations, page, toc]
     );
 
     function nextSlide(e) {
@@ -44,6 +50,15 @@ export const Navigator = ({ presentationName }) => {
         doc.close();
     }
 
+    function openTableOfContent(e) {
+        setToc(!toc)
+    }
+
+    function openPage(e) {
+        setToc(!toc)
+        setPage(presentations.findIndex(p => p === e))
+    }
+
     return (
         <div className="Navigator">
             <div className="NavigatorTitle">
@@ -54,12 +69,21 @@ export const Navigator = ({ presentationName }) => {
                     Homepage
                 </Link>
             </div>
-            <div>
-                <iframe id="frame" title="Iframe" />
-            </div>
+            {
+                toc ?
+                    <div className="slidePreview">
+                        {presentations.map(slide => <div><SlidePreview key={slide} slideName={slide} openPage={openPage} /></div>)}
+                    </div> :
+                    <div>
+                        <iframe id="frame" title="Iframe" />
+                    </div>
+            }
             <div className="NavigatorButtons">
                 <button onClick={previousSlide}>
                     Previous Slide
+                </button>
+                <button onClick={openTableOfContent}>
+                    Table Of Content
                 </button>
                 <button onClick={nextSlide}>
                     Next Slide

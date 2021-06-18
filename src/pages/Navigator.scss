@@ -16,6 +16,12 @@
         }
     }
 
+    .slidePreview {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
     iframe{
         height: 96%;
         width: 100%;
