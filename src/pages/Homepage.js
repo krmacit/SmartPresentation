@@ -144,6 +144,7 @@ export const HomePage = () => {
                     {presentations.map(presentation => <PresentationLink presentationName={presentation} />)}
                 </div>
             </div>
+            <a href="https://github.com/krmacit/SmartPresentation">Github Repo</a>
         </div>
     );
 }
